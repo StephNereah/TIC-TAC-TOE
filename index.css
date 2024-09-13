@@ -1,0 +1,79 @@
+/* Ensures the html and body are full-height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the landing page using id */
+#landing-page {
+    height: 100%;
+    background-image: url('images/landing_page.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.7); /* Lower the brightness for a fantasy theme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: 'Fascinate Inline', cursive;
+    position: relative;
+}
+
+/* Fantasy-themed glowing title box */
+.glowing-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 69, 123, 0.85));
+    color: white;
+    font-size: 3rem;
+    text-shadow: 0 0 20px #ff69b4, 0 0 30px #412a3cde;
+    border: 2px solid #ff69b4;
+    border-radius: 20px;
+    box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.726);
+    z-index: 10;
+}
+
+/* Style for the paragraph text */
+#landing-page p {
+    font-size: 1.8rem; /* Increase this value to make the text larger */
+    font-family: 'Fascinate Inline', cursive;
+    margin-top: 100px; /* Optional: Adds space between the title and paragraph */
+}
+
+/* Move the buttons to the bottom-right corner */
+.button-container {
+    position: absolute;
+    bottom: 20px; /* Distance from the bottom of the page */
+    right: 20px;  /* Distance from the right side of the page */
+    display: flex;
+    gap: 20px; /* Space between buttons */
+}
+
+/* Styling for the glowing buttons */
+.glowing-button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+
+    /* Apply the same font as the landing page */
+    font-family: 'Fascinate Inline', cursive;
+
+    color: white;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 69, 123, 0.85)); /* Same gradient as title box */
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    text-shadow: 0 0 20px #ff69b4, 0 0 30px #412a3cde;
+    box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.726); /* Soft glowing box */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Hover effect for the buttons */
+.glowing-button:hover {
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+    box-shadow: 0 0 50px 25px rgba(255, 105, 180, 1); /* Stronger glow on hover */
+}
