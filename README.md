@@ -1,6 +1,9 @@
 🎮 TIC-TAC-TOE: The Ultimate Showdown 🤖 vs 🧠
 
-Welcome to TIC-TAC-TOE: The Ultimate Showdown, where you (the human) go head-to-head with an algorithm that doesn’t need coffee to stay sharp! This isn’t your average childhood game—oh no, this is TIC-TAC-TOE 2.0, with advanced game mechanics, a leaderboard to flex your victories, and enough back-end power to take you to the moon. 🚀 
+Welcome to TIC-TAC-TOE: The Ultimate Showdown, where you (the human) go head-to-head with an algorithm that doesn’t need coffee to stay sharp! 
+
+This isn’t your average childhood game—oh no, this is TIC-TAC-TOE 2.0, with advanced game mechanics, a leaderboard to flex your victories, and enough back-end power to take you to the moon. 🚀 
+
 Hey who needs friends when you can have AI (I am actually crying typing this lol)
 
 
@@ -25,12 +28,14 @@ A Friendly (but deadly) Algorithm: Our AI opponent was built with love. And a ti
 
 ARCHITECURE 🏛️
 
-Backend: Built with 🐍 Flask (or Django), depending on how adventurous we feel. Expect top-notch API handling, smooth game state management, and authentication that even hackers will respect.
+*Backend:* Built with 🐍 Flask (or Django), depending on how adventurous we feel. Expect top-notch API handling, smooth game state management, and authentication that even hackers will respect.
 
-Frontend: Sleek, intuitive, and designed to make you feel like you’re playing a futuristic version of Tic-Tac-Toe.
-Database: Your wins are sacred. That’s why we use a reliable database to store every glorious victory (and the occasional defeat).
+*Frontend:* Sleek, intuitive, and designed to make you feel like you’re playing a futuristic version of Tic-Tac-Toe.
 
-Data Modeling 🧠
+*Database:* Your wins are sacred. That’s why we use a reliable database to store every glorious victory (and the occasional defeat).
+
+
+DATA MODELLING 🧠
 We track game states, players, moves, and everything in between. That’s right—nothing gets past us. Not even that sneaky diagonal win you tried to pull.
 
 
@@ -43,22 +48,33 @@ As a competitive human, I want to see my name on the leaderboard so I can screen
 
 HOW TO RUN LOCALLY 🏃‍♂️
 
-Clone this repository:
+CLONE THIS REPOSITORY:
 
-bash
-Copy code
+*bash*
+
+Copy code:
+
 git clone https://github.com/your-username/TIC-TAC-TOE.git
+
 cd TIC-TAC-TOE
 Install dependencies (because who likes missing libraries?):
 
-bash
-Copy code
-pip install -r requirements.txt
-Fire it up:
 
-bash
-Copy code
+*bash*
+
+Copy code:
+
+pip install -r requirements.txt
+
+
+FIRE IT UP:
+
+*bash*
+
+Copy code:
+
 python manage.py runserver
+
 Visit http://localhost:8000 and prepare to enter the ultimate Tic-Tac-Toe showdown.
 
 
@@ -80,4 +96,5 @@ Stephanie Adhiambo: Frontend guru, ensuring the game is as pretty as your victor
 
 LICENSE 📜
 
-Feel free to clone, fork, and make this project your own—but remember, Tic-Tac-Toe is a game of honor. Play fair and square, just like in the playground.
+Feel free to clone, fork, and make this project your own—but remember, Tic-Tac-Toe is a game of honor. 
+Play fair and square, just like in the playground.
