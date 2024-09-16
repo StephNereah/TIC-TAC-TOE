@@ -1,0 +1,108 @@
+/* Ensure the html and body are full-height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the gameboard page */
+#gameboard-page {
+    height: 100%;
+    background-image: url('images/homepage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.7); /* Adjust exposure for a softer look */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: 'Fascinate Inline', cursive;
+    position: relative;  /* Relative positioning for absolute elements inside */
+}
+
+/* Same glowing title styling */
+.glowing-title {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.973), rgba(255, 69, 122, 0.288));
+    color: white;
+    font-size: 3rem;
+    text-shadow: 0 0 20px #ff69b4e5, 0 0 30px #412a3c9c;
+    border: 2px solid #ff69b402;
+    border-radius: 20px;
+    box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.123);
+    z-index: 10;
+}
+
+/* Tic Tac Toe Board Styling */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 10px;
+}
+
+/* Styling for each cell in the board */
+.cell {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.877), rgba(255, 69, 123, 0.85));
+    border: 2px solid #ff69b436;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.411);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Hover effect for the cells */
+.cell:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px 25px rgba(255, 105, 180, 0.952);
+}
+
+/* Styling for Restart and Quit buttons */
+#restart-button, #quit-button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-family: 'Fascinate Inline', cursive;
+    color: white;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 69, 123, 0.85));
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    text-shadow: 0 0 20px #ff69b4, 0 0 30px #412a3cde;
+    box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.726);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    position: absolute;
+    top: 20px;
+    z-index: 1000;
+}
+
+/* Position buttons at top-left and top-right */
+#quit-button {
+    left: 20px;  /* Top-left corner */
+}
+
+#restart-button {
+    right: 20px;  /* Top-right corner */
+}
+
+/* Hover effect for buttons */
+#restart-button:hover, #quit-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px 25px rgba(255, 105, 180, 1);
+}
+
+/* Highlight the winning cells */
+.highlight {
+    background-color: rgba(255, 255, 0, 0.6); /* Soft yellow glow */
+    box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.685);
+    transform: scale(1.1); /* Slightly enlarge the winning cells */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
