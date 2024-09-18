@@ -28,7 +28,7 @@ html, body {
     padding: 15px 30px;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.973), rgba(255, 69, 122, 0.288));
     color: white;
-    font-size: 3rem;
+    font-size: 3.5GIT rem;
     text-shadow: 0 0 20px #ff69b4e5, 0 0 30px #412a3c9c;
     border: 2px solid #ff69b402;
     border-radius: 20px;
@@ -63,7 +63,7 @@ html, body {
 /* Button styling */
 #back-to-home {
     padding: 10px 20px;
-    font-size: 1.5rem;
+    font-size: 2.0rem;
     font-family: 'Fascinate Inline', cursive;
     color: white;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 69, 123, 0.85));
