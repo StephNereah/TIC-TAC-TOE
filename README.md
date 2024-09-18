@@ -81,17 +81,16 @@ Visit http://localhost:8000 and prepare to enter the ultimate Tic-Tac-Toe showdo
 TECH STACK 🛠️
 
 Frontend: HTML5, CSS3, JavaScript (because it’s 2024, and vanilla JS still works)
-Backend: Flask/Django (we like to keep things exciting)
+
+Backend: Flask (we like to keep things exciting)
 Database: PostgreSQL (because we care about your stats)
 
 
 THE TEAM 🧑‍🤝‍🧑
 
-Developed by an amazing solo team (and Tic-Tac-Toe enthusiast):
+Developed by an amazing solo developer and Tic-Tac-Toe enthusiast:
 
-Stephanie Adhiambo: The mastermind behind our algorithm. She doesn’t just play the game—she is the game.
-Stephanie Adhiambo: Backend wizard, who ensures the AI doesn’t go rogue and take over the world.
-Stephanie Adhiambo: Frontend guru, ensuring the game is as pretty as your victory dance.
+- Stephanie Adhiambo: The mastermind behind our algorithm, backend, and frontend. She ensures the game is both challenging and beautifully presented.
 
 
 LICENSE 📜

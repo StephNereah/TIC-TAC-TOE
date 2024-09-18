@@ -1,0 +1,83 @@
+/* Ensure the html and body are full-height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the leaderboard page */
+#leaderboard-page {
+    height: 100%;
+    background-image: url('images/leaderboard.png'); /* Different background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.8); /* Adjust exposure for a softer look */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: 'Fascinate Inline', cursive;
+    position: relative;
+}
+
+/* Same glowing title styling */
+.glowing-title {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.973), rgba(255, 69, 122, 0.288));
+    color: white;
+    font-size: 3rem;
+    text-shadow: 0 0 20px #ff69b4e5, 0 0 30px #412a3c9c;
+    border: 2px solid #ff69b402;
+    border-radius: 20px;
+    box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.123);
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+/* Styling for the leaderboard table */
+#leaderboard-table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Table header styling */
+#leaderboard-table thead th {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 69, 123, 0.85));
+    color: white;
+    padding: 10px;
+    border: 2px solid #ff69b4;
+}
+
+/* Table cell styling */
+#leaderboard-table tbody td {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.877), rgba(255, 69, 123, 0.85));
+    color: white;
+    padding: 10px;
+    border: 2px solid #ff69b436;
+}
+
+/* Button styling */
+#back-to-home {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-family: 'Fascinate Inline', cursive;
+    color: white;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 69, 123, 0.85));
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    text-shadow: 0 0 20px #ff69b4, 0 0 30px #412a3cde;
+    box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.726);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin-top: 20px;
+}
+
+/* Hover effect for button */
+#back-to-home:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px 25px rgba(255, 105, 180, 1);
+}
