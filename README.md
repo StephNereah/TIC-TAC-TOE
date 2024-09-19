@@ -2,13 +2,13 @@
 # 🎮 TIC-TAC-TOE: The Ultimate Showdown 🤖 vs 🧠
 
 
-    ![Tic Tac Toe Landing Page](images/TIC-TAC-TOE-Landing-Page.png)
+    ![Tic Tac Toe Landing Page](images/SS-Landing-Page.png)
 
 
-    ![Tic Tac Toe Gamepage](images/TIC-TAC-TOE-Gameboard.png)
+    ![Tic Tac Toe Gamepage](images/SS-Gameboard.png)
 
 
-    ![Tic Tac Toe Leaderboard](images/TIC-TAC-TOE-Leaderboard.png)
+    ![Tic Tac Toe Leaderboard](images/SS-Leaderboard.png)
 
 
 TIC-TAC-TOE: The Ultimate Showdown is a web-based version of the classic Tic-Tac-Toe game featuring two-player mode and AI opponent challenges. Track your wins, show off on the leaderboard, and dive into a fun, futuristic experience!
