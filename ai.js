@@ -2,9 +2,11 @@
 function makeAIMove() {
     let emptyCells = board.map((val, index) => val === '' ? index : null).filter(val => val !== null);
 
-    // Simple AI logic: pick a random empty cell
+    // Simple AI logic: pick a random empty cell after a 2-second delay
     if (emptyCells.length > 0) {
-        let randomIndex = emptyCells[Math.floor(Math.random() * emptyCells.length)];
-        handleMove(randomIndex);
+        setTimeout(() => {
+            let randomIndex = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+            handleMove(randomIndex);
+        }, 1000); // 1-second delay
     }
 }
