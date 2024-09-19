@@ -12,7 +12,7 @@ html, body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(0.7); /* Adjust exposure for a softer look */
+    filter: brightness(0.7);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,10 +20,10 @@ html, body {
     text-align: center;
     color: white;
     font-family: 'Fascinate Inline', cursive;
-    position: relative;  /* Relative positioning for absolute elements inside */
+    position: relative;
 }
 
-/* Same glowing title styling */
+/* Glowing title */
 .glowing-title {
     padding: 15px 30px;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.973), rgba(255, 69, 122, 0.288));
@@ -36,7 +36,7 @@ html, body {
     z-index: 10;
 }
 
-/* Tic Tac Toe Board Styling */
+/* Tic Tac Toe Board */
 .board {
     display: grid;
     grid-template-columns: repeat(3, 150px);
@@ -66,7 +66,7 @@ html, body {
     box-shadow: 0 0 50px 25px rgba(255, 105, 180, 0.952);
 }
 
-/* Styling for Restart and Quit buttons */
+/* Restart and Quit buttons */
 #restart-button, #quit-button {
     padding: 10px 20px;
     font-size: 1.5rem;
@@ -84,13 +84,13 @@ html, body {
     z-index: 1000;
 }
 
-/* Position buttons at top-left and top-right */
+/* Position buttons */
 #quit-button {
-    left: 20px;  /* Top-left corner */
+    left: 20px;
 }
 
 #restart-button {
-    right: 20px;  /* Top-right corner */
+    right: 20px;
 }
 
 /* Hover effect for buttons */
@@ -101,8 +101,59 @@ html, body {
 
 /* Highlight the winning cells */
 .highlight {
-    background-color: rgba(255, 255, 0, 0.6); /* Soft yellow glow */
+    background-color: rgba(255, 255, 0, 0.6);
     box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.685);
-    transform: scale(1.1); /* Slightly enlarge the winning cells */
+    transform: scale(1.1);
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Responsive styling */
+@media only screen and (max-width: 1024px) {
+    /* Adjust grid for medium screens */
+    .board {
+        grid-template-columns: repeat(3, 120px);
+        grid-template-rows: repeat(3, 120px);
+        gap: 8px;
+    }
+    .cell {
+        width: 120px;
+        height: 120px;
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* Adjust grid and buttons for smaller screens */
+    .board {
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 5px;
+    }
+    .cell {
+        width: 100px;
+        height: 100px;
+        font-size: 2rem;
+    }
+    #restart-button, #quit-button {
+        padding: 8px 16px;
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Further adjustments for extra small screens */
+    .board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        gap: 5px;
+    }
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+    #restart-button, #quit-button {
+        padding: 5px 10px;
+        font-size: 1rem;
+    }
 }

@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't affect element width/height */
 }
 
 /* Styling for the leaderboard page */
@@ -21,6 +22,7 @@ html, body {
     color: white;
     font-family: 'Fascinate Inline', cursive;
     position: relative;
+    padding: 10px; /* Added padding for small devices */
 }
 
 /* Same glowing title styling */
@@ -28,7 +30,7 @@ html, body {
     padding: 15px 30px;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.973), rgba(255, 69, 122, 0.288));
     color: white;
-    font-size: 3.5GIT rem;
+    font-size: 3rem; /* Adjusted for responsiveness */
     text-shadow: 0 0 20px #ff69b4e5, 0 0 30px #412a3c9c;
     border: 2px solid #ff69b402;
     border-radius: 20px;
@@ -40,8 +42,10 @@ html, body {
 /* Styling for the leaderboard table */
 #leaderboard-table {
     border-collapse: collapse;
-    width: 80%;
+    width: 100%;
     max-width: 800px;
+    margin-bottom: 30px; /* Added margin for better spacing */
+    text-align: center; /* Ensure table content is centered */
 }
 
 /* Table header styling */
@@ -50,6 +54,7 @@ html, body {
     color: white;
     padding: 10px;
     border: 2px solid #ff69b4;
+    font-size: 1.5rem;
 }
 
 /* Table cell styling */
@@ -58,12 +63,13 @@ html, body {
     color: white;
     padding: 10px;
     border: 2px solid #ff69b436;
+    font-size: 1.2rem;
 }
 
 /* Button styling */
 #back-to-home {
-    padding: 10px 20px;
-    font-size: 2.0rem;
+    padding: 12px 24px;
+    font-size: 2rem;
     font-family: 'Fascinate Inline', cursive;
     color: white;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 69, 123, 0.85));
@@ -80,4 +86,60 @@ html, body {
 #back-to-home:hover {
     transform: scale(1.1);
     box-shadow: 0 0 50px 25px rgba(255, 105, 180, 1);
+}
+
+/* Responsive design for different screen sizes */
+
+/* Adjust for tablets */
+@media (max-width: 1024px) {
+    .glowing-title {
+        font-size: 2.5rem;
+        padding: 10px 20px;
+    }
+
+    #leaderboard-table thead th, #leaderboard-table tbody td {
+        font-size: 1.2rem;
+        padding: 8px;
+    }
+
+    #back-to-home {
+        font-size: 1.8rem;
+        padding: 10px 18px;
+    }
+}
+
+/* Adjust for mobile devices */
+@media (max-width: 768px) {
+    .glowing-title {
+        font-size: 2rem;
+        padding: 8px 16px;
+    }
+
+    #leaderboard-table thead th, #leaderboard-table tbody td {
+        font-size: 1rem;
+        padding: 6px;
+    }
+
+    #back-to-home {
+        font-size: 1.5rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Further adjust for small mobile screens */
+@media (max-width: 480px) {
+    .glowing-title {
+        font-size: 1.5rem;
+        padding: 5px 10px;
+    }
+
+    #leaderboard-table thead th, #leaderboard-table tbody td {
+        font-size: 0.9rem;
+        padding: 5px;
+    }
+
+    #back-to-home {
+        font-size: 1.2rem;
+        padding: 6px 10px;
+    }
 }
