@@ -10,10 +10,17 @@
 <body>
     <div id="gameboard-page">
         <h1 class="glowing-title">TIC TAC TOE</h1>
-        
-        <!-- Add buttons here -->
-        <button class="glowing-button" id="quit-button">Quit</button>
-        <button class="glowing-button" id="restart-button">Restart</button>
+
+        <!-- Revert buttons back to below the title -->
+        <div class="button-container">
+            <button class="glowing-button" id="quit-button">Quit</button>
+            <button class="glowing-button" id="restart-button">Restart</button>
+            <!-- Add AI vs. Human toggle -->
+            <button class="glowing-button" id="toggle-mode-button">Switch to AI Mode</button>
+        </div>
+
+        <!-- Score display -->
+        <div id="score-display" class="score-display">Player X: 0 | Player O: 0 | Draws: 0</div>
 
         <div class="board">
             <div class="cell" data-index="0"></div>
@@ -28,7 +35,17 @@
         </div>
     </div>
 
+    <!-- Modal for game result -->
+    <div id="game-result-modal" class="modal">
+        <div class="modal-content">
+            <p id="modal-message"></p>
+            <button class="glowing-button" id="close-modal">Close</button>
+        </div>
+    </div>
+
     <!-- Link to JS file -->
     <script src="game.js"></script>
+    <script src="ai.js"></script> <!-- Include the AI script -->
 </body>
 </html>
+

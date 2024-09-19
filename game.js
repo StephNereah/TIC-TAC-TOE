@@ -1,105 +1,105 @@
 // Game variables
-let currentPlayer = 'X';  // Player X starts
-let gameBoard = ['', '', '', '', '', '', '', '', ''];  // Empty board stores state of each cell
-let gameActive = true;
+let currentPlayer = 'X';
+let board = ['', '', '', '', '', '', '', '', ''];
+let gameOver = false;
+let aiMode = false; // AI Mode flag
+let scores = { X: 0, O: 0, draws: 0 };
 
 // Winning combinations
-const winningCombinations = [
-    [0, 1, 2],  // First row
-    [3, 4, 5],  // Second row
-    [6, 7, 8],  // Third row
-    [0, 3, 6],  // First column
-    [1, 4, 7],  // Second column
-    [2, 5, 8],  // Third column
-    [0, 4, 8],  // Diagonal from top-left to bottom-right
-    [2, 4, 6]   // Diagonal from top-right to bottom-left
+const winCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
 ];
 
-// Select all cells
-const cells = document.querySelectorAll('.cell');
-
-// Add click event to each cell
-cells.forEach(cell => {
-    cell.addEventListener('click', handleCellClick);
-});
-
-// Handle click on a cell
-function handleCellClick(event) {
-    const cell = event.target;
-    const cellIndex = cell.getAttribute('data-index');
-
-    // If cell is already occupied or the game is over, do nothing
-    if (gameBoard[cellIndex] !== '' || !gameActive) {
-        return;
-    }
-
-    // Update cell and board state
-    gameBoard[cellIndex] = currentPlayer;
-    cell.textContent = currentPlayer;
-
-    // Check if the current move wins the game
-    checkForWinner();
-
-    // If the game is still active, switch player
-    if (gameActive) {
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    }
-}
-
-// Check for a win or draw
-function checkForWinner() {
-    let roundWon = false;
-
-    // Check all winning combinations
-    for (let i = 0; i < winningCombinations.length; i++) {
-        const [a, b, c] = winningCombinations[i];
-
-        // Check if all 3 cells in a winning combination are the same (and not empty)
-        if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
-            roundWon = true;
-            highlightWinner([a, b, c]);  // Highlight the winning combination
-            break;
+// Function to check for a winner
+function checkWinner() {
+    for (let combo of winCombinations) {
+        const [a, b, c] = combo;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+            return board[a];
         }
     }
-
-    if (roundWon) {
-        gameActive = false;  // Stop the game
-        setTimeout(() => alert(`${currentPlayer} has won!`), 100);  // Alert the winner
-        return;  // Do not reset the board automatically
-    }
-
-    // Check for a draw
-    if (!gameBoard.includes('')) {
-        gameActive = false;  // Stop the game
-        setTimeout(() => alert('It\'s a draw!'), 100);  // Alert the draw
-    }
+    if (!board.includes('')) return 'draw';
+    return null;
 }
 
-// Highlight the winning cells
-function highlightWinner(winningCells) {
-    winningCells.forEach(index => {
-        cells[index].classList.add('highlight');  // Add the highlight class to the winning cells
-    });
+// Handle game result (display modal)
+function handleGameOver(result) {
+    const modal = document.getElementById('game-result-modal');
+    const message = document.getElementById('modal-message');
+    if (result === 'draw') {
+        message.textContent = "It's a Draw!";
+        scores.draws++;
+    } else {
+        message.textContent = `Player ${result} Wins!`;
+        scores[result]++;
+    }
+    updateScoreDisplay();
+    modal.style.display = 'block';
+    gameOver = true;
 }
 
-// Reset the game board for a new game
+// Update score display
+function updateScoreDisplay() {
+    const scoreDisplay = document.getElementById('score-display');
+    scoreDisplay.textContent = `Player X: ${scores.X} | Player O: ${scores.O} | Draws: ${scores.draws}`;
+}
+
+// Restart the game
 function resetBoard() {
-    // Clear the game board state and cell contents
-    gameBoard = ['', '', '', '', '', '', '', '', ''];  // Clear board state
-    cells.forEach(cell => {
-        cell.textContent = '';  // Clear cell content
-        cell.classList.remove('highlight'); // Remove any highlight from previous win
-    });
-
-    currentPlayer = 'X';  // Reset to Player X
-    gameActive = true;  // Reactivate the game
+    board = ['', '', '', '', '', '', '', '', ''];
+    currentPlayer = 'X';
+    gameOver = false;
+    document.querySelectorAll('.cell').forEach(cell => cell.textContent = '');
+    document.getElementById('game-result-modal').style.display = 'none';
 }
 
-// Function to go back to the landing page
-function quitGame() {
-    window.location.href = 'index.html'; // Path to my landing page
+// Switch between AI and local multiplayer mode
+document.getElementById('toggle-mode-button').addEventListener('click', () => {
+    aiMode = !aiMode;
+    document.getElementById('toggle-mode-button').textContent = aiMode ? 'Switch to Multiplayer Mode' : 'Switch to AI Mode';
+    resetBoard(); // Reset board when switching modes
+});
+
+// Handle player move
+function handleMove(index) {
+    if (!gameOver && board[index] === '') {
+        board[index] = currentPlayer;
+        document.querySelector(`[data-index='${index}']`).textContent = currentPlayer;
+        
+        const winner = checkWinner();
+        if (winner) {
+            handleGameOver(winner);
+        } else {
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            
+            if (aiMode && currentPlayer === 'O') {
+                makeAIMove();
+            }
+        }
+    }
 }
 
-// Event listeners for buttons
+// Event listeners for each cell
+document.querySelectorAll('.cell').forEach((cell, index) => {
+    cell.addEventListener('click', () => handleMove(index));
+});
+
+// Restart button event listener
 document.getElementById('restart-button').addEventListener('click', resetBoard);
-document.getElementById('quit-button').addEventListener('click', quitGame);
+
+// Close modal event listener
+document.getElementById('close-modal').addEventListener('click', () => {
+    document.getElementById('game-result-modal').style.display = 'none';
+});
+
+// Quit button event listener (redirect to home)
+document.getElementById('quit-button').addEventListener('click', () => {
+    window.location.href = 'index.html';
+});

@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden; /* Prevent any scrolling */
 }
 
 /* Styling for the gameboard page */
@@ -21,6 +22,7 @@ html, body {
     color: white;
     font-family: 'Fascinate Inline', cursive;
     position: relative;
+    background-attachment: fixed; /* Ensure the background doesn't move when scrolling */
 }
 
 /* Glowing title */
@@ -34,6 +36,7 @@ html, body {
     border-radius: 20px;
     box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.123);
     z-index: 10;
+    margin-top: 20px; /* Add margin-top to make space for buttons */
 }
 
 /* Tic Tac Toe Board */
@@ -51,13 +54,14 @@ html, body {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.877), rgba(255, 69, 123, 0.85));
     border: 2px solid #ff69b436;
     border-radius: 10px;
-    box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.411);
+    box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.33);
+    font-size: 2.5rem;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: all 0.3s;
 }
 
 /* Hover effect for the cells */
@@ -66,50 +70,73 @@ html, body {
     box-shadow: 0 0 50px 25px rgba(255, 105, 180, 0.952);
 }
 
-/* Restart and Quit buttons */
-#restart-button, #quit-button {
-    padding: 10px 20px;
-    font-size: 1.5rem;
-    font-family: 'Fascinate Inline', cursive;
+/* Styling for glowing buttons */
+.glowing-button {
+    padding: 12px 24px;
+    font-size: 1.4rem;
     color: white;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 69, 123, 0.85));
-    border: 2px solid #ff69b4;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.773), rgba(255, 69, 122, 0.596));
+    text-shadow: 0 0 8px #ff69b4e0;
+    border: 2px solid #ff69b49c;
     border-radius: 10px;
-    text-shadow: 0 0 20px #ff69b4, 0 0 30px #412a3cde;
-    box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.726);
+    margin: 10px;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    position: absolute;
-    top: 20px;
-    z-index: 1000;
+    transition: all 0.3s;
+    font-family: 'Fascinate Inline', cursive; /* Ensure the same font as the rest of the project */
 }
 
-/* Position buttons */
-#quit-button {
-    left: 20px;
+.glowing-button:hover {
+    background: linear-gradient(135deg, rgba(255, 69, 122, 0.63), rgba(0, 0, 0, 0.773));
+    box-shadow: 0 0 12px 8px #ff69b4a8;
 }
 
+/* Restart and Quit buttons positioning */
 #restart-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+#quit-button {
+    position: absolute;
     right: 20px;
+    top: 20px;
 }
 
-/* Hover effect for buttons */
-#restart-button:hover, #quit-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 50px 25px rgba(255, 105, 180, 1);
+/* Styling for score display */
+.score-display {
+    font-size: 1.8rem;
+    color: white;
+    margin: 20px;
+    text-shadow: 0 0 10px #ff69b4a5;
+    font-family: 'Fascinate Inline', cursive;
 }
 
-/* Highlight the winning cells */
-.highlight {
-    background-color: rgba(255, 255, 0, 0.6);
-    box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.685);
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Responsive styling */
+.modal-content {
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15% auto;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 0 20px 10px rgba(255, 105, 180, 0.3);
+}
+
+/* Responsive styling for smaller screens */
 @media only screen and (max-width: 1024px) {
-    /* Adjust grid for medium screens */
     .board {
         grid-template-columns: repeat(3, 120px);
         grid-template-rows: repeat(3, 120px);
@@ -123,7 +150,6 @@ html, body {
 }
 
 @media only screen and (max-width: 768px) {
-    /* Adjust grid and buttons for smaller screens */
     .board {
         grid-template-columns: repeat(3, 100px);
         grid-template-rows: repeat(3, 100px);
@@ -135,13 +161,12 @@ html, body {
         font-size: 2rem;
     }
     #restart-button, #quit-button {
-        padding: 8px 16px;
-        font-size: 1.2rem;
+        padding: 10px 20px;
+        font-size: 1.4rem;
     }
 }
 
 @media only screen and (max-width: 480px) {
-    /* Further adjustments for extra small screens */
     .board {
         grid-template-columns: repeat(3, 80px);
         grid-template-rows: repeat(3, 80px);
@@ -153,7 +178,7 @@ html, body {
         font-size: 1.5rem;
     }
     #restart-button, #quit-button {
-        padding: 5px 10px;
-        font-size: 1rem;
+        padding: 8px 16px;
+        font-size: 1.2rem;
     }
 }
