@@ -7,6 +7,6 @@ function makeAIMove() {
         setTimeout(() => {
             let randomIndex = emptyCells[Math.floor(Math.random() * emptyCells.length)];
             handleMove(randomIndex);
-        }, 1000); // 1-second delay
+        }, 2000); // 2-second delay
     }
 }
