@@ -1,11 +1,14 @@
 
 # 🎮 TIC-TAC-TOE: The Ultimate Showdown 🤖 vs 🧠
 
-    ![Landing Page](images/SS-Landing-Page.png)
+    ![HomePage](images/homepage.png)
     
 
-    ![GamePage](images/SS-Gameboard.png)
-    
+    ![GamePage](images/multiplayer.png)
+
+
+    ![GamePage](images/AI_mode.png)
+
 
     ![Leaderboard](images/leaderboard.png)
 
