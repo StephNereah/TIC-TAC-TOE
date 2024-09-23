@@ -3,23 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIC TAC TOE: The Ultimate Showdown</title>
+    <title>TIC-TAC-TOE: Landing Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css"> <!-- Link to your css file -->
 </head>
 <body>
-    <div id="landing-page">
-        <div class="glowing-title">TIC TAC TOE</div>
 
-        <p>X's and O's: The Ultimate showdown!!! 
-            LET'S GO!!</p>
-        <!-- Buttons -->
-        <div class="button-container">
-            <button class="glowing-button" onclick="window.location.href='gameboard.html';">PLAY</button>
-            <!-- Update the Leaderboard button to redirect to the leaderboard page -->
-            <button class="glowing-button" onclick="window.location.href='leaderboard.html';">LEADERBOARD</button>
-            <button class="glowing-button">OPTIONS</button>
+<!-- Intro Section-->
+<section id="intro-section">
+    <h1>WELCOME TO TIC-TAC-TOE!</h1>
+    <br>
+    <img src="images/SS-Landing-Page.png"
+    alt="This is the homepage of my game"
+    width="1000" height="500">
+    <pre>   The Ultimate Showdown of X's and O's.
+     Get ready to challenge yourself!!!</pre>
+    <br><br>
+
+<!-- Navigation -->
+<header>
+    <nav>
+        <div class="logo">SECTIONS</div>
+        <hr>
+        <br> <!-- Line break after logo/title -->
+        <ul>
+            <li><a href="#feature-section">~ Game Features</a></li>
+            <br> <!-- Line break after each list item -->
+            <li><a href="#about-section">~ About The Project</a></li>
+        </ul>
+    </nav>
+</header>
+    <br><br>
+
+    <button onclick="location.href='homepage.html'">LET'S PLAY</button> <!-- Button to game interface -->
+</section>
+
+<br>
+
+<!-- Features Section -->
+<section id="feature-section">
+    <h2>GAME FEATURES</h2>
+    <br>
+    <hr>
+    <div class="features">
+        <div class="feature">
+            <h3>Two Player Mode</h3>
+            <hr>
+            <br>
+            <img src="images/multiplayer.png"
+            alt="This is the multiplayer mode of my game"
+            width="800" height="400">
+            <br>
+            <br>
+            <pre>Play with a friend in local multiplayer mode in real time!!.
+                The toggle switch allows you to switch between Multiplayer mode and AI mode.
+                 The score tracker keeps track of wins, losses and draws of each player.
+                 The QUIT button allows you to exit the game and takes you back to the landing page. 
+                The RESTART button allows you to refresh the gameboard and play another round.
+                 After every round, you get a pop up modal indicating which player won, lost or if its a draw.
+            </pre>
+        </div>
+        <br>
+        <div class="feature">
+            <hr>
+            <h3>AI Challenge</h3>
+            <hr>
+            <br>
+            <img src="images/AI_mode.png"
+            alt="This is the AI mode of my game"
+            width="800" height="400">
+            <br>
+            <br>
+            <pre>Compete against our smart AI and test your skills.
+                 The toggle switch allows you to switch between AI and Multiplayer mode.
+                The score tracker keeps track of wins, losses and draws of each player.
+                 The QUIT button allows you to exit the game and takes you back to the landing page. 
+                The RESTART button allows you to refresh the gameboard and play another round.
+                 After every round, you get a pop up modal indicating which player won, lost or if its a draw.
+            </pre>
+        </div>
+        <br>
+        <div class="feature">
+            <hr>
+            <h3>Leaderboard</h3>
+            <hr>
+            <br>
+            <img src="images/SS-Leaderboard.png"
+            alt="This is the leaderboard of my game"
+            width="800" height="400">
+            <br>
+            <br>
+            <pre>Track your wins and see where you rank. 
+As it actively updates after every win!
+The BACK-TO-GAME button takes you back to your game homepage.
+            </pre>
         </div>
     </div>
+</section>
+
+<br>
+
+<!-- About Section -->
+<section id="about-section">
+    <h2>ABOUT THE PROJECT</h2>
+    <br>
+    <hr>
+
+    <pre>This project was inspired by my undying love when it comes to board games and video games. 
+ I grew up playing a lot of both video and board games, but a game I constantly played was Tic-Tac-Toe.
+Built by a solo team of me, Stephanie Adhiambo as part of our portfolio project
+ at Holberton School.
+
+The reason why I constantly played Tic-Tac-Toe was the flexiblity, the board was simple to draw and the logic was pretty straight forward.
+ So when Holberton School gave us the opportunity to work on our portfolio projects, I knew exactly what I wanted to do.
+
+I spent too much time I admit researching and drawing how I would like the game interface to look like 
+ and what theme I would settle on. I ended up settling for what I like to call "Straight out of an anime" 
+theme to try incorporate my love for anime.
+
+I also tried working on the AI concept for the first time and making it work well with the game logic.
+ This was a real pain, after weeks of struggling and merging the backend and the frontend HERE WE ARE!!!
+I call this the commencement of my journey to becoming a Game Dev one day. XOXO!!
+</pre>
+    <br>
+    <br>
+    <h2>LINKS</h2>
+    <hr>
+    <br>
+    <p>Feel free to check out my Github, LinkedIn, and Twitter to learn more about my journey.</p>
+    <div class="social-buttons">
+        <br>
+        <a href="https://github.com/StephNereah/TIC-TAC-TOE" target="_blank">
+            <button class="btn github-btn">Github</button>
+        </a>
+        <br><br>
+        <a href="https://www.linkedin.com/in/stephanie-adhiambo-13b75823a/" target="_blank">
+            <button class="btn linkedin-btn">LinkedIn</button>
+        </a>
+    </div>
+</section>
+<footer>&copy;2024 Stephanie Adhiambo. All rights reserved</footer>
 </body>
 </html>

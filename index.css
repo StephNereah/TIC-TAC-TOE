@@ -1,113 +1,164 @@
-/* Ensure the html and body are full-height */
-html, body {
-    height: 100%;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fascinate Inline', cursive;
 }
 
-/* Styling for the landing page */
-#landing-page {
-    height: 100%;
-    background-image: url('images/landing_page.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(0.7);
+/* Body Styling */
+body {
+    background-color: #312730; /* Deep pale purple background */
+    color: #d4c1d6;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    color: white;
-    font-family: 'Fascinate Inline', cursive;
-    position: relative;
+    min-height: 100vh;
 }
 
-/* Glowing title box */
-.glowing-title {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 15px 30px;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 69, 123, 0.85));
-    color: white;
-    font-size: 3rem;
-    text-shadow: 0 0 20px #ff69b4, 0 0 30px #412a3cde;
-    border: 2px solid #ff69b4;
-    border-radius: 20px;
-    box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.726);
-    z-index: 10;
+/* Glowing Title Styling */
+h1, h2, h3 {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(154, 122, 158, 0.7), 
+                 0 0 20px rgba(150, 229, 229, 0.6), 
+                 0 0 30px rgba(185, 54, 135, 0.966),
+                 0 0 40px rgba(184, 105, 122, 0.795),
+                 0 0 50px rgba(199, 36, 177, 0.11);
+    transition: all 0.3s ease-in-out;
 }
 
-/* Paragraph text */
-#landing-page p {
-    font-size: 1.8rem;
-    font-family: 'Fascinate Inline', cursive;
-    margin-top: 100px;
+h1 {
+    font-size: 4rem;
+    text-transform: uppercase; /* Added for uppercase titles */
+    letter-spacing: 2px; /* Added for spacing between letters */
+    margin-bottom: 20px; /* Spacing below the h1 */
 }
 
-/* Buttons container */
-.button-container {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    gap: 20px;
+h1:hover, h2:hover {
+    text-shadow: 0 0 20px rgba(167, 125, 201, 0.9), 
+                 0 0 30px rgba(255, 125, 201, 0.9), 
+                 0 0 40px rgba(255, 125, 201, 0.9),
+                 0 0 50px rgba(255, 125, 201, 0.9),
+                 0 0 60px rgba(255, 125, 201, 0.9);
 }
 
-/* Glowing buttons */
-.glowing-button {
-    padding: 15px 30px;
+/* Pre-formatted Text Styling */
+pre {
+    font-size: 1.2rem;
+    line-height: 2.0;
+    color: #d4c1d6;
+}
+
+/* Navigation */
+/* Style for the logo */
+.logo {
+    font-size: 2em; /* Adjust size as needed */
+    font-family: 'Fascinate Inline', cursive; /* Matching the glowing title font */
+    color: #fff;
+    margin-bottom: 10px;
+    padding-left: 20px; /* Adds indentation to the left */
+}
+
+/* Style for the navigation menu */
+nav ul {
+    list-style-type: none; /* Removes bullet points */
+    padding-left: 20px; /* Adds indentation for the entire list */
+}
+
+nav ul li {
+    margin-bottom: 10px; /* Adds space between each list item */
+}
+
+nav ul li a {
+    font-size: 1.2em; /* Adjust the font size */
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Styling for the hover effect */
+nav ul li a:hover {
+    color: #f0f0f0; /* Change text color on hover */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.192); /* Glowing effect */
+}
+
+
+/* Button Styling */
+button {
+    background-color: #000;
+    color: #ffffff;
     font-size: 1.5rem;
-    font-family: 'Fascinate Inline', cursive;
-    color: white;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 69, 123, 0.85));
-    border: 2px solid #ff69b4;
-    border-radius: 10px;
-    text-shadow: 0 0 20px #ff69b4, 0 0 30px #412a3cde;
-    box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.726);
+    padding: 10px 30px;
+    border: 2px solid #fffffff6;
+    border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #fff, 0 0 30px #fff;
 }
 
-/* Hover effect for the buttons */
-.glowing-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 50px 25px rgba(255, 105, 180, 1);
+button:hover {
+    background-color: #ffffffa9;
+    color: #000;
+    box-shadow: 0 0 20px #ffffff23, 0 0 30px #fff, 0 0 40px #fff;
 }
 
-/* Responsive styling */
-@media only screen and (max-width: 1024px) {
-    /* Adjust font size and button container for medium screens */
-    .glowing-title {
-        font-size: 2.5rem;
-        padding: 12px 25px;
-    }
-    .glowing-button {
-        padding: 12px 25px;
-        font-size: 1.3rem;
-    }
+/* Features Section */
+#feature-section {
+    margin: 50px 0;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
 }
 
-@media only screen and (max-width: 768px) {
-    /* Adjust font size and button container for smaller screens */
-    .glowing-title {
-        font-size: 2rem;
-        padding: 10px 20px;
-    }
-    .glowing-button {
-        padding: 10px 20px;
-        font-size: 1.2rem;
-    }
+.feature {
+    margin-bottom: 30px;
 }
 
-@media only screen and (max-width: 480px) {
-    /* Further adjustments for extra small screens */
-    .glowing-title {
-        font-size: 1.5rem;
-        padding: 8px 16px;
+hr {
+    width: 100%;
+    margin: 10px auto;
+    border: 1px solid #d4c1d6;
+}
+
+/* About Section */
+#about-section {
+    margin: 50px 0;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
+}
+
+/* Social Buttons */
+.social-buttons {
+    margin-top: 20px;
+}
+
+.social-buttons .btn {
+    margin: 10px;
+}
+
+.github-btn {
+    background-color: #333;
+}
+
+.linkedin-btn {
+    background-color: #2f566b91;
+}
+
+.github-btn:hover, .linkedin-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
     }
-    .glowing-button {
-        padding: 8px 16px;
-        font-size: 1rem;
+
+    .features, .about-section {
+        padding: 10px;
     }
 }
