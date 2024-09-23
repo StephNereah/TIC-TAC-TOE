@@ -10,7 +10,7 @@
     ![GamePage](images/AI_mode.png)
 
 
-    ![Leaderboard](images/leaderboard.png)
+    ![Leaderboard](images/SS-Leaderboard.png)
 
 
 TIC-TAC-TOE: The Ultimate Showdown is a web-based version of the classic Tic-Tac-Toe game featuring two-player mode and AI opponent challenges. Track your wins, show off on the leaderboard, and dive into a fun, futuristic experience!
@@ -24,7 +24,7 @@ Hey who needs friends when you can have AI (I am actually crying typing this lol
 
 **Deployed site**: https://stephnereah.github.io/TIC-TAC-TOE/index.html
 
-**Blog Article**: 
+**Blog Article**: https://medium.com/@StephNereah/tic-tac-toe-the-game-no-one-asked-for-but-everyone-secretly-loves-f6f586603c05
 
 
 INSPIRATION:
