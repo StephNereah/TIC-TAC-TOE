@@ -14,8 +14,19 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
     min-height: 100vh;
+    text-align: center;
+    padding: 20px; /* Add padding for small screens */
+    overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+}
+
+/* Centered Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
 }
 
 /* Glowing Title Styling */
@@ -31,9 +42,9 @@ h1, h2, h3 {
 
 h1 {
     font-size: 4rem;
-    text-transform: uppercase; /* Added for uppercase titles */
-    letter-spacing: 2px; /* Added for spacing between letters */
-    margin-bottom: 20px; /* Spacing below the h1 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
 }
 
 h1:hover, h2:hover {
@@ -52,37 +63,33 @@ pre {
 }
 
 /* Navigation */
-/* Style for the logo */
 .logo {
-    font-size: 2em; /* Adjust size as needed */
-    font-family: 'Fascinate Inline', cursive; /* Matching the glowing title font */
+    font-size: 2em;
     color: #fff;
     margin-bottom: 10px;
-    padding-left: 20px; /* Adds indentation to the left */
+    padding-left: 20px;
 }
 
-/* Style for the navigation menu */
+/* Navigation Menu */
 nav ul {
-    list-style-type: none; /* Removes bullet points */
-    padding-left: 20px; /* Adds indentation for the entire list */
+    list-style-type: none;
+    padding-left: 0; /* Centering navigation links */
 }
 
 nav ul li {
-    margin-bottom: 10px; /* Adds space between each list item */
+    margin-bottom: 10px;
 }
 
 nav ul li a {
-    font-size: 1.2em; /* Adjust the font size */
+    font-size: 1.2em;
     color: #fff;
     text-decoration: none;
 }
 
-/* Styling for the hover effect */
 nav ul li a:hover {
-    color: #f0f0f0; /* Change text color on hover */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.192); /* Glowing effect */
+    color: #f0f0f0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.192);
 }
-
 
 /* Button Styling */
 button {
@@ -151,14 +158,68 @@ hr {
     color: #000000;
 }
 
-/* Responsive Design */
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+}
+
 @media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul {
+        padding-left: 0;
+    }
+
     nav ul li {
         display: block;
         margin: 10px 0;
     }
 
-    .features, .about-section {
+    button {
+        font-size: 1.1rem;
+        padding: 8px 18px;
+    }
+
+    .container {
+        padding: 15px;
+        width: 90%; /* Prevent overflow on small screens */
+    }
+
+    #feature-section, #about-section {
         padding: 10px;
+        margin: 30px 0;
+    }
+
+    .feature {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    nav ul {
+        text-align: center; /* Center the menu */
     }
 }
