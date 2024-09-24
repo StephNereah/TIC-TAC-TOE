@@ -19,23 +19,74 @@
                     <th>Draws</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="leaderboard-body">
                 <!-- Player data will go here -->
-                <tr>
-                    <td>Player X</td>
-                    <td>5</td>
-                    <td>3</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Player O</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>3</td>
-                </tr>
             </tbody>
         </table>
         <button id="back-to-home" onclick="window.location.href='homepage.html';">BACK TO GAME</button>
     </div>
+
+    <script>
+        // Sample players array
+        let players = [
+            { name: 'Player X', wins: 0, losses: 0, draws: 0 },
+            { name: 'Player O', wins: 0, losses: 0, draws: 0 },
+        ];
+
+        // Function to update the leaderboard display
+        function updateLeaderboard() {
+            const leaderboardBody = document.getElementById('leaderboard-body');
+            leaderboardBody.innerHTML = ''; // Clear current leaderboard
+
+            players.forEach(player => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${player.name}</td>
+                    <td>${player.wins}</td>
+                    <td>${player.losses}</td>
+                    <td>${player.draws}</td>
+                `;
+                leaderboardBody.appendChild(row);
+            });
+        }
+
+        // Function to add game results
+        function addGameResult(winner, loser) {
+            // Update wins and losses
+            if (winner) {
+                players.find(p => p.name === winner).wins++;
+                players.find(p => p.name === loser).losses++;
+            } else {
+                // Handle draw case
+                players.forEach(player => player.draws++);
+            }
+
+            updateLeaderboard(); // Refresh the leaderboard display
+        }
+
+        // Example usage:
+        //Uncomment the following lines to test
+         addGameResult('Player X', 'Player O'); // Player X wins
+         addGameResult('Player O', 'Player X'); // Player O wins
+         addGameResult(); // Draw
+
+        // Initial leaderboard display
+        updateLeaderboard();
+    </script>
 </body>
 </html>
+
+
+<script>
+    // Check localStorage for the music state and play or pause accordingly
+    window.addEventListener('DOMContentLoaded', function () {
+        const backgroundMusic = new Audio('images/sound.mp3'); // Use the same music file
+        backgroundMusic.loop = true;
+
+        let isMusicPlaying = localStorage.getItem('isMusicPlaying') === 'true';
+        
+        if (isMusicPlaying) {
+            backgroundMusic.play();
+        }
+    });
+</script>

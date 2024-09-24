@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="settings.css"> <!-- New CSS file for settings page -->
+</head>
+<body>
+    <div id="settings-page">
+        <!-- Glowing title header -->
+        <div class="glowing-title">SETTINGS</div>
+        <br>
+        <br>
+        <!-- GIF container -->
+        <div class="gif-container">
+            <iframe src="https://giphy.com/embed/HZboJ5Pkti9k4" width="480" height="269" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p>Control your sound experience</p>
+        <br>
+        <br>
+        <!-- Music control button -->
+        <div class="settings-container">
+            <button id="music-toggle" class="glowing-button" onclick="toggleMusic()">MUSIC: OFF</button>
+        </div>
+        
+        <!-- Back/Home button -->
+        <div class="settings-container">
+            <button class="glowing-button" onclick="window.location.href='homepage.html';">HOME</button>
+        </div>
+
+        <!-- Audio element for the local soundtrack -->
+        <audio id="background-music" src="images/sound.mp3" loop></audio> <!-- Replace with the actual filename -->
+    </div>
+
+    <script>
+        const backgroundMusic = document.getElementById('background-music');
+        const toggleButton = document.getElementById('music-toggle');
+        
+        // Check localStorage to see if the music was playing on a previous page
+        let isMusicPlaying = localStorage.getItem('isMusicPlaying') === 'true';
+
+        if (isMusicPlaying) {
+            backgroundMusic.play();
+            toggleButton.textContent = 'MUSIC: ON';
+        } else {
+            toggleButton.textContent = 'MUSIC: OFF';
+        }
+
+        // Function to toggle music on and off
+        function toggleMusic() {
+            if (isMusicPlaying) {
+                // Pause the music
+                backgroundMusic.pause();
+                toggleButton.textContent = 'MUSIC: OFF';
+            } else {
+                // Play the music
+                backgroundMusic.play();
+                toggleButton.textContent = 'MUSIC: ON';
+            }
+            isMusicPlaying = !isMusicPlaying;
+            
+            // Store the music state in localStorage
+            localStorage.setItem('isMusicPlaying', isMusicPlaying);
+        }
+    </script>
+</body>
+</html>

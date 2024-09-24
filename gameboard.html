@@ -46,6 +46,38 @@
     <!-- Link to JS file -->
     <script src="game.js"></script>
     <script src="ai.js"></script> <!-- Include the AI script -->
+    
+    <script>
+        // Check localStorage for the music state and play or pause accordingly
+        window.addEventListener('DOMContentLoaded', function () {
+            const backgroundMusic = new Audio('images/sound.mp3'); // Use the same music file
+            backgroundMusic.loop = true;
+
+            let isMusicPlaying = localStorage.getItem('isMusicPlaying') === 'true';
+            
+            if (isMusicPlaying) {
+                backgroundMusic.play();
+            }
+        });
+
+        // Add event listener for the Quit button
+        document.getElementById('quit-button').addEventListener('click', function() {
+            window.location.href = 'homepage.html'; // Redirect to homepage
+        });
+    </script>
 </body>
 </html>
 
+<script>
+    // Check localStorage for the music state and play or pause accordingly
+    window.addEventListener('DOMContentLoaded', function () {
+        const backgroundMusic = new Audio('images/sound.mp3'); // Use the same music file
+        backgroundMusic.loop = true;
+
+        let isMusicPlaying = localStorage.getItem('isMusicPlaying') === 'true';
+        
+        if (isMusicPlaying) {
+            backgroundMusic.play();
+        }
+    });
+</script>

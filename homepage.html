@@ -18,8 +18,23 @@
             <button class="glowing-button" onclick="window.location.href='gameboard.html';">PLAY</button>
             <!-- Update the Leaderboard button to redirect to the leaderboard page -->
             <button class="glowing-button" onclick="window.location.href='leaderboard.html';">LEADERBOARD</button>
-            <button class="glowing-button">OPTIONS</button>
+            <button class="glowing-button" onclick="window.location.href='settings.html';">OPTIONS</button>
+            <button class="glowing-button" onclick="window.location.href='index.html';">QUIT</button> <!-- New QUIT button -->
         </div>
     </div>
 </body>
 </html>
+
+<script>
+    // Check localStorage for the music state and play or pause accordingly
+    window.addEventListener('DOMContentLoaded', function () {
+        const backgroundMusic = new Audio('images/sound.mp3'); // Use the same music file
+        backgroundMusic.loop = true;
+
+        let isMusicPlaying = localStorage.getItem('isMusicPlaying') === 'true';
+        
+        if (isMusicPlaying) {
+            backgroundMusic.play();
+        }
+    });
+</script>
